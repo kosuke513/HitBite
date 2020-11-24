@@ -43,24 +43,21 @@ def expect():
 def match_number():
     hit = 0
     bite = 0
-    if bite == 4:
-        win()
-    else:
-        for i in range(4):
-            if numbers[i] == expected_numbers[i]:
-                bite += 1
-            elif numbers[i] == expected_numbers[0]:
-                hit += 1
-            elif numbers[i] == expected_numbers[1]:
-                hit += 1
-            elif numbers[i] == expected_numbers[2]:
-                hit += 1
-            elif numbers[i] == expected_numbers[3]:
-                hit += 1
+    for i in range(4):
+        if numbers[i] == expected_numbers[i]:
+            bite += 1
+        elif numbers[i] == expected_numbers[0]:
+            hit += 1
+        elif numbers[i] == expected_numbers[1]:
+            hit += 1
+        elif numbers[i] == expected_numbers[2]:
+            hit += 1
+        elif numbers[i] == expected_numbers[3]:
+            hit += 1
 
-        hitbite =  '  Hit:' + str(hit) + ' Bite:' +str(bite)
-        hitbites.append(hitbite)
-        expect()
+    hitbite =  '  Hit:' + str(hit) + ' Bite:' +str(bite)
+    hitbites.append(hitbite)
+    return bite
 
 def judge():
     bite = match_number()
